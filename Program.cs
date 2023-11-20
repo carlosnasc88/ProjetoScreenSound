@@ -140,16 +140,28 @@ void ExibirMediaDaBanda(string media)
     Console.WriteLine("Media das bandas");
     Console.WriteLine("**********************\n");
     Console.Write("Digite o nome da banda que deseja exbibir a media : ");
-    string nomeDaBanda = Console.ReadLine()!; 
-    if(bandasRegistradas.ContainsKey(nomeDaBanda))
+    string nomeDaBanda = Console.ReadLine()!;
+    if (bandasRegistradas.ContainsKey(nomeDaBanda))
     {
 
-        for (int i = 0; i < length; i++)
-        {
 
-        }
+        List<int> notasDasBnas = bandasRegistradas[nomeDaBanda];
+        Console.WriteLine($"\n A média da banda {nomeDaBanda} é {notasDasBnas.Average()}");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+
     }
+    else
+    {
+        Console.WriteLine($" \nA banda {nomeDaBanda} não foi encontrada");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
 
+    }
 
 
 }
